@@ -1,51 +1,57 @@
-'''    
-    Exercício 27 da seção de estrutura de decisão da Python Brasil:
-https://wiki.python.org.br/EstruturaDeDecisao
-Uma fruteira está vendendo frutas com a seguinte tabela de preços:
-
-                      Até 5 Kg           Acima de 5 Kg
-Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
-Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
-
-    Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra 
-    ultrapassar R$ 25,00,
-receberá ainda um desconto de 10% sobre este total.
-Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade 
-(em Kg) de maças
-adquiridas e escreva o
-valor a ser pago pelo cliente.
+'''
+26 - Um posto está vendendo combustíveis com a seguinte tabela de 
+     descontos:
+    Álcool:
+    até 20 litros, desconto de 3% por litro
+    acima de 20 litros, desconto de 5% por litro
+    
+    Gasolina:
+    até 20 litros, desconto de 4% por litro
+    acima de 20 litros, desconto de 6% por litro
+Escreva um algoritmo que leia o número de litros vendidos,
+o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina),
+calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço 
+do litro da gasolina é R$ 2,50 o
+preço do litro do álcool é R$ 1,90.
 Mostre o restultado com duas casas decimais
 '''
+preco_g = 2.5
+preco_a = 1.9
+quantidade = 0
+combustivel = ''
 
-peso_morango = float(input('Qual o peso dos morangos?: '))
-peso_maca = float(input('Qual o peso das maças?: '))
-desconto = 0
+while True:
+    try:
 
-preco_morango = 2.5
-preco_maca = 1.80
+        while 'G' != combustivel != 'A': 
+            combustivel = input('Qual o combustível? (A) - álcool ou (G) - gasolina? ').upper()
+        while quantidade <= 0:
+            quantidade = float(input('Quantos litros? '))
 
-if peso_morango > 5:
-    preco_morango = 2.2
-if peso_maca > 5:
-    preco_maca = 1.5
+        if combustivel == 'A':
+            tipo_combustivel = 'álcool'
+            if quantidade <= 20:
+                desconto = 3
+            else:
+                desconto = 5
+            preco_a_com_desconto = preco_a - (preco_a * (desconto/100))
 
-valor_maca = preco_maca * peso_maca
-valor_morango = preco_morango * peso_morango
+            valor_pagar = quantidade * preco_a
+            valor_pagar_desconto = quantidade * preco_a_com_desconto
 
-peso_total = peso_maca + peso_morango
-preco_total = valor_maca + valor_morango
+        if combustivel == 'G':
+            tipo_combustivel = 'gasolina'
+            if quantidade <= 20:
+                desconto = 4
+            else:
+                desconto = 6
+            preco_g_com_desconto = preco_g - (preco_g * (desconto/100))
 
-if preco_total > 25 or peso_total > 8:
-    desconto = (preco_total * .1)
-    preco_total -= desconto
+            valor_pagar = quantidade * preco_g
+            valor_pagar_desconto = quantidade * preco_g_com_desconto
 
-if peso_morango > 0:
-    print(f'(+)  Morango  - valor:  R$  {valor_morango:.2f} - quantidade:  {peso_morango} kg - preço: R$ {preco_morango:.2f}/kg')
-if peso_maca > 0:
-    print(f'(+)  Maça     - valor:  R$  {valor_maca:.2f} - quantidade:  {peso_maca} kg - preço: R$ {preco_maca:.2f}/kg')
-
-
-print(f'(-)  Desconto - valor:  R$  {desconto:.2f}')
-print(f'          Valor Total:  R$  {preco_total:.2f}')
-
-
+        print(f'{quantidade} litro(s) de {tipo_combustivel}', end = '')
+        print(f' custa(m): R$ {valor_pagar:.2f}. Com {desconto}% de desconto, fica R$ {valor_pagar_desconto:.2f}')
+        break
+    except ValueError:
+        #print('Entrada invalida!!!') 
