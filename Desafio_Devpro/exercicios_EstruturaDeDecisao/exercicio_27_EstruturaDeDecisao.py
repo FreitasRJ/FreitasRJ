@@ -17,6 +17,31 @@ valor a ser pago pelo cliente.
 Mostre o restultado com duas casas decimais
 '''
 
+def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
+    ''' Resulta em alinhamento das colunas de impressão de valores com número
+        de caracteres diferente. Retornando uma string do tamanho indicado em
+        num_caracters até o ponto.
+    '''
+    
+    num_str = str(numero)
+    tamanho = len(num_str)
+    posicao = 0
+    inteiro = ''
+
+    while posicao < tamanho and num_str[posicao] != '.':
+        if num_str[posicao] != '.':
+            inteiro += num_str[posicao]
+            posicao += 1
+        
+    num_espacos = num_caracteres - posicao
+    num_espacos_str = ' ' * num_espacos
+
+    saida = num_espacos_str + num_str  
+    
+    return saida
+
+
+
 peso_morango = float(input('Qual o peso dos morangos?: '))
 peso_maca = float(input('Qual o peso das maças?: '))
 desconto = 0
@@ -39,7 +64,6 @@ if preco_total > 25 or peso_total > 8:
     desconto = (preco_total * .1)
     preco_total -= desconto
 
-tamanho_valor_morango = valor_morango // 10
 
 
 if peso_morango > 0:
