@@ -13,9 +13,7 @@ def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
 
     while posicao < tamanho and num_str[posicao] != '.':
         inteiro += num_str[posicao]
-        posicao += 1
-        print(inteiro)
-        
+        posicao += 1      
         
     if posicao == tamanho:
         num_str += '.00'
@@ -34,7 +32,7 @@ def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
     return saida
 
 
-valor = alinha_saida_valores_no_print(1225.1, 6)
+valor = alinha_saida_valores_no_print(5.1, 6)
 valor2 = alinha_saida_valores_no_print(25, 6)
 valor3 = alinha_saida_valores_no_print(25.333, 6)
 print(valor)
