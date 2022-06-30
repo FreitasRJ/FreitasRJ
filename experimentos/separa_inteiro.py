@@ -12,21 +12,23 @@ def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
     inteiro = ''
 
     while posicao < tamanho and num_str[posicao] != '.':
-        if num_str[posicao] != '.':
-            #inteiro += num_str[posicao]
-            posicao += 1
-        else:
-            # resolver quando entrada = nn.n ou nn
-            
-            pass    
+        posicao += 1
+        
+    if posicao == tamanho:
+        num_str += '.00'
+    
+    if posicao == tamanho -2:
+        num_str += '0'
+       
     num_espacos = num_caracteres - posicao
     num_espacos_str = '_' * num_espacos
 
     saida = num_espacos_str + num_str  
     return saida
 
-valor = alinha_saida_valores_no_print(1225.14, 6)
-valor2 = alinha_saida_valores_no_print(25.12, 6)
+valor = alinha_saida_valores_no_print(1225.1, 6)
+valor2 = alinha_saida_valores_no_print(25, 6)
+valor3 = alinha_saida_valores_no_print(25.3333, 6)
 print(valor)
 print(valor2)
-
+print(valor3)
