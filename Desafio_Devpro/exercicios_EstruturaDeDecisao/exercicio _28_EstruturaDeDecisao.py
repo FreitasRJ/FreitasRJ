@@ -29,21 +29,52 @@ saída doctest do curso:
 
 while True:
     try:
-
+        forma_pagamento = 'cartão'
         desconto_percentual = .05
         carne = ''
+        modo_pag = ''
 
         print('Digite (f) para Filé duplo, (a) para Alcatra ou (p) para Picanha: ', end = '')
         
         while carne != 'f' and carne != 'a' and carne != 'p': 
             carne = input().lower()
           
+        if carne == 'f':
+            tipo_carne = "Filé Duplo"
 
-        tipo_carne = "Filé Duplo"
-        quantidade = 10
-        forma_pagamento = "dinheiro"
+        if carne == 'a':
+            tipo_carne = "Alcatra"
+    
+        if carne == 'p':
+            tipo_carne = "Picanha"
 
-        if forma_pagamento == 'dinheiro':
+
+        quantidade = int(input('Quantos kilos?: '))
+
+        print('Forma de pagamento: (d) Dinheiro  (c) Cartão (p) pix: ', end = '')
+        
+        while modo_pag != 'd' and modo_pag != 'c' and modo_pag != 'p':
+            modo_pag = input().lower()
+        
+        if modo_pag == 'd':
+            forma_pagamento = "dinheiro"
+        if modo_pag == 'p':
+            forma_pagamento = "pix"
+
+        
+
+        if quantidade > 5:
+
+            preco_file = 5.80
+            preco_Alcatra = 6.80
+            preco_Picanha = 7.80
+            if carne == "f": 
+                preco_carne = preco_file
+            elif carne == "a":
+                preco_carne = preco_Alcatra
+            elif carne == "p":
+                preco_carne = preco_Picanha
+        else:
 
             preco_file = 4.90
             preco_Alcatra = 5.90
@@ -55,26 +86,19 @@ while True:
                 preco_carne = preco_Alcatra
             elif carne == "p":
                 preco_carne = preco_Picanha
-                
-        else:
-            preco_file = 5.80
-            preco_Alcatra = 6.80
-            preco_Picanha = 7.80
-            if carne == "f": 
-                preco_carne = preco_file
-            elif carne == "a":
-                preco_carne = preco_Alcatra
-            elif carne == "p":
-                preco_carne = preco_Picanha
-       
 
 
         valor_compra = quantidade * preco_carne
-        if forma_pagamento == "dinheiro":
-            print(f'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Não há desconto, pagamento feito com dinheiro')
+
+        if forma_pagamento == "dinheiro" or forma_pagamento == 'pix':
+            print(f'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Não há desconto, pagamento feito com {forma_pagamento}')
+        
         else: 
+            
             valor_com_desconto = valor_compra - (valor_compra * desconto_percentual)
             print(f'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_com_desconto:.2f}')    
+
         break
+
     except ValueError:
         break
