@@ -28,7 +28,7 @@ def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
        
  
     num_espacos = num_caracteres - posicao
-    num_espacos_str = '_' * num_espacos
+    num_espacos_str = ' ' * num_espacos
 
     saida = num_espacos_str + num_str  
     return saida
