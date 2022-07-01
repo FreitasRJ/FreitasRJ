@@ -25,8 +25,8 @@ while True:
             maior = numero3
          
         print(maior)   
-                
+        break        
     except ValueError:
-        print('Digite um número!!')
+        #print('Digite um número!!')
         break
                     

@@ -37,7 +37,7 @@ while True:
        
         print(f'Maior: {maior}')
         print(f'Menor: {menor}')
-                       
+        break               
     except ValueError:
-        print('Digite um número!!')
+        #print('Digite um número!!')
         break

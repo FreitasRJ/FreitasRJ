@@ -17,9 +17,9 @@ while True:
     elif numero < 0:
             num = 'Negativo'
     else:
-            num = 'None'
+            num = 'não tem positivo nem negativo'
             
-    print(f'Esse número é: {num}')
+    print(num)
     
         
                 

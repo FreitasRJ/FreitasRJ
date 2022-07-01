@@ -17,4 +17,4 @@ while True:
     elif 'f' != sexo != 'm':
 
         print('Sexo Inválido')
-        break
+        

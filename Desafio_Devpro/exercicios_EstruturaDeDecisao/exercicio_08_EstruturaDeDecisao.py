@@ -1,6 +1,6 @@
 '''
-8 - Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar,
-sabendo que a decisão é sempre pelo mais barato.
+8 - Faça um programa que pergunte o preço de três produtos e informe qual produto
+você deve comprar, sabendo que a decisão é sempre pelo mais barato.
 
 Mostrar o resultado com duas casas decimais
 '''
@@ -28,7 +28,8 @@ while True:
         
     
     print(f'Melhor produto custa R$ {menor_preco:,.2f}')
-    
+    break
+
 
 
    

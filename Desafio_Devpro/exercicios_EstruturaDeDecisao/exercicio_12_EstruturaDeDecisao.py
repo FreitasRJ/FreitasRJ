@@ -22,9 +22,39 @@ descontos são do Imposto de Renda, que depende do salário bruto (conforme tabe
             Salário Liquido                 : R$  935,00
 
 '''
+def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
+    ''' Resulta em alinhamento das colunas de impressão de valores com número
+        de caracteres diferente. Retornando uma string do tamanho indicado em
+        num_caracters.
+    '''
+    
+    num_str = str(numero)
+    tamanho = len(num_str)
+    posicao = 0
+    inteiro = ''
 
-valor_hora = 5
-quant_hora = 220
+    while posicao < tamanho and num_str[posicao] != '.':
+        inteiro += num_str[posicao]
+        posicao += 1      
+        
+    if posicao == tamanho:
+        num_str += '.00'
+    
+    elif posicao == tamanho - 2:
+        num_str += '0'
+    
+    elif num_str[posicao] == '.' and tamanho - posicao - 1 >= 2:
+        num_str = inteiro + num_str[posicao] + num_str[posicao + 1] + num_str[posicao + 2]       
+       
+ 
+    num_espacos = num_caracteres - posicao
+    num_espacos_str = ' ' * num_espacos
+
+    saida = num_espacos_str + num_str  
+    return saida
+
+valor_hora = 100
+quant_hora = 160
 salario_bruto = valor_hora * quant_hora
 
 if salario_bruto <= 900:
@@ -42,12 +72,22 @@ fgts = salario_bruto * .11
 total_descontos = ir + inss # + sindicato
 salario_liquido = salario_bruto- total_descontos
 
-print(f'Salário Bruto ({valor_hora} * {quant_hora})                                    :R$ {salario_bruto:,.2f}')
-print(f'(-) IR (5%)                                                :R$ {ir:,.2f}')
-print(f'(-) INSS ( 10%)                                            :R$ {inss:,.2f}')
-print(f'FGTS (11%)                                                 :R$ {fgts:,.2f}')
-print(f'Total de descontos                                         :R$ {total_descontos:,.2f}')
-print(f'Salário Líquido                                            :R$ {salario_liquido:,.2f}')
+inss_alinhado = alinha_saida_valores_no_print(inss, 6)
+sindicato_alinhado = alinha_saida_valores_no_print(sindicato, 6)
+fgts_alinhado =alinha_saida_valores_no_print(fgts, 6)
+total_descontos_alinhado = alinha_saida_valores_no_print(total_descontos, 6)
+salario_liquido_alinhado = alinha_saida_valores_no_print(salario_liquido, 6)
+ir_alinhado = alinha_saida_valores_no_print(ir, 6)
+salario_bruto_alinhado = alinha_saida_valores_no_print(salario_bruto, 6)
+valor_hora_alinhado = alinha_saida_valores_no_print(valor_hora, 2)
+
+
+print(f'Salário Bruto (R$ {valor_hora_alinhado} * {quant_hora})     :R$ {salario_bruto_alinhado}')
+print(f'(-) IR (5%)                         :R$ {ir_alinhado}')
+print(f'(-) INSS ( 10%)                     :R$ {inss_alinhado}')
+print(f'FGTS (11%)                          :R$ {fgts_alinhado}')
+print(f'Total de descontos                  :R$ {total_descontos_alinhado}')
+print(f'Salário Líquido                     :R$ {salario_liquido_alinhado}')
 '''
 descobrir como formatar a saída como a do exercício
 ''' 
