@@ -53,41 +53,62 @@ def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
     saida = num_espacos_str + num_str  
     return saida
 
-valor_hora = 100
-quant_hora = 160
+def alinha_a_direita(dado: str, num_caracteres: int):
+    ''' Resulta em alinhamento das colunas de impressão de valores com número
+        de caracteres diferente. Retornando uma string do tamanho indicado em
+        num_caracters.
+    '''
+    
+    tamanho = len(dado)
+    inteiro = ''
+
+    num_espacos = num_caracteres - tamanho
+    num_espacos_str = ' ' * num_espacos
+    alinhado = num_espacos_str + dado  
+    return alinhado
+
+
+
+valor_hora = float(input('Entre com o valor da hora: '))
+quant_hora = int(input('Entrer com a quantidade de horas trabalhadas: '))
+
 salario_bruto = valor_hora * quant_hora
 
 if salario_bruto <= 900:
     ir = 0
+    ir_por = '0'
 elif salario_bruto <= 1500:
     ir = (salario_bruto * .05)
+    ir_por = '5'
 elif salario_bruto <= 2500:
     ir = (salario_bruto * .1)
+    ir_por = '10'
 elif salario_bruto > 2500:
     ir = (salario_bruto * .2)
-
+    ir_por = '20'
 inss = salario_bruto * .1
-sindicato = salario_bruto * .3
+sindicato = salario_bruto * .03
 fgts = salario_bruto * .11
-total_descontos = ir + inss # + sindicato
+total_descontos = ir + inss + sindicato
 salario_liquido = salario_bruto- total_descontos
 
-inss_alinhado = alinha_saida_valores_no_print(inss, 6)
-sindicato_alinhado = alinha_saida_valores_no_print(sindicato, 6)
-fgts_alinhado =alinha_saida_valores_no_print(fgts, 6)
-total_descontos_alinhado = alinha_saida_valores_no_print(total_descontos, 6)
-salario_liquido_alinhado = alinha_saida_valores_no_print(salario_liquido, 6)
-ir_alinhado = alinha_saida_valores_no_print(ir, 6)
-salario_bruto_alinhado = alinha_saida_valores_no_print(salario_bruto, 6)
-valor_hora_alinhado = alinha_saida_valores_no_print(valor_hora, 2)
+inss_alinhado = alinha_saida_valores_no_print(inss, 8)
+sindicato_alinhado = alinha_saida_valores_no_print(sindicato, 8)
+fgts_alinhado =alinha_saida_valores_no_print(fgts, 8)
+total_descontos_alinhado = alinha_saida_valores_no_print(total_descontos, 8)
+salario_liquido_alinhado = alinha_saida_valores_no_print(salario_liquido, 8)
+ir_alinhado = alinha_saida_valores_no_print(ir, 8)
+salario_bruto_alinhado = alinha_saida_valores_no_print(salario_bruto, 8)
+valor_hora_alinhado = alinha_saida_valores_no_print(valor_hora, 4)
+#ir_por = alinha_a_direita(ir_por, 2)
 
+print(f'Salário Bruto: (R${valor_hora_alinhado} * {quant_hora})   :R$ {salario_bruto_alinhado}')
+if ir_por == '0' or ir_por == '5':
+    print(f'(-) IR ({ir_por}%)                        :R$ {ir_alinhado}')
+else:
+    print(f'(-) IR ({ir_por}%)                       :R$ {ir_alinhado}')
+print(f'(-) INSS ( 10%)                    :R$ {inss_alinhado}')
+print(f'FGTS (11%)                         :R$ {fgts_alinhado}')
+print(f'Total de descontos                 :R$ {total_descontos_alinhado}')
+print(f'Salário Líquido                    :R$ {salario_liquido_alinhado}')
 
-print(f'Salário Bruto (R$ {valor_hora_alinhado} * {quant_hora})     :R$ {salario_bruto_alinhado}')
-print(f'(-) IR (5%)                         :R$ {ir_alinhado}')
-print(f'(-) INSS ( 10%)                     :R$ {inss_alinhado}')
-print(f'FGTS (11%)                          :R$ {fgts_alinhado}')
-print(f'Total de descontos                  :R$ {total_descontos_alinhado}')
-print(f'Salário Líquido                     :R$ {salario_liquido_alinhado}')
-'''
-descobrir como formatar a saída como a do exercício
-''' 

@@ -19,9 +19,9 @@ while True:
         
          #print(f'A letra {letra} é uma consoante')
         print('consoante')
-    else:
+    #else:
     
-       break
+       #break
     
    
     
