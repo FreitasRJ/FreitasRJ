@@ -16,7 +16,7 @@ while True:
     
         print(f'Seu peso ideal é {peso_ideal_m:.1f} kg, se você for mulher')
         print(f'Seu peso ideal é {peso_ideal_h:.1f} kg, se você for homem')
-        
+        break
     
     except ValueError:
         print('Entrada inválida!!!')

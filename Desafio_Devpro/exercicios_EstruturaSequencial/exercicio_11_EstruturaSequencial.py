@@ -21,7 +21,7 @@ while True:
         print(f'A soma do triplo do primeiro com o terceiro é {((3 * num_i_01) + num_real):.2f}')
 
         print(f'O terceiro elevado ao cubo é {(num_real ** 3):.2f}')
-
+        break
     except ValueError:
 
         print('Entrada inválida!!!')

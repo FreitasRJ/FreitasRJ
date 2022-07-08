@@ -10,11 +10,15 @@ valor da multa que João deverá pagar. Imprima os dados do programa
 com as mensagens adequadas.
 
 '''
+
+
 peso = float(input('Qual o peso da pesca? '))
 
-excesso = round(peso - 50)
+excesso = (peso - 50)
 
 multa = float(excesso * 4)
 
-print(f'peso da pesca ==> {peso}kg Excesso ==> {excesso}kg  multa ==> R$ {multa}')
+print(f'O peso excedente de peixes é de {excesso:.2f} kg')
+print(f'Por isso, a multa é de R$ {multa:.2f}')
+
 
