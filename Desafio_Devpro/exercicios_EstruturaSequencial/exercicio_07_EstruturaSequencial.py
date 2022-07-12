@@ -4,8 +4,9 @@ o dobro desta área para o usuário.
 
 '''
 
-lado = float(input('Informe a medida do lateral do quadrado: '))
+lado = float(input('Informe a medida da lateral do quadrado: '))
 
 area_quadrado = lado ** 2
 print(f'A área do quadrado com esse lado é: {area_quadrado:,.2f}')
 print(f'O dobro da aŕea do quadrado é: {(area_quadrado * 2):,.2f}')
+# A palavra área foi deixada com a grafia 'aŕea' para não alterar no teste.
