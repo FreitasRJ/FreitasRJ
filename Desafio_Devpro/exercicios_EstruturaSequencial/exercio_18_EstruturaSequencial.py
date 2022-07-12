@@ -11,6 +11,6 @@ import math
 tam_MB = int(input('Informe o tamanho do arquivo MB: '))
 velo_Mbps = int(input('Informe a velocidade em Mbps: '))
 
-tempo_down_minutos = math.ceil((tam_MB /(velo_Mbps/8))/60)
-
-print(tempo_down_minutos)
+#tempo_down_minutos = math.ceil((tam_MB /(velo_Mbps/8))/60)
+tempo_down_minutos = ((tam_MB /(velo_Mbps/8))/60)
+print(f'O tempo aproximado do Download é: {tempo_down_minutos:.0f} minuto(s)')
