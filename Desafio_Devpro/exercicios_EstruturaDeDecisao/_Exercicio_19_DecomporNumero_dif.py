@@ -10,10 +10,17 @@ e imprima a quantidade de centenas, dezenas e unidades do mesmo.
 '''
 
 
-exemplo = [326, 300, 100, 320, 310, 305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7, 16, 0]
-   
-for numero in exemplo:   
-    #numero = int(input('Digite um numero entre (0 e 999): '))
+#exemplo = [326, 300, 100, 320, 310, 305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7, 16, 0]
+ 
+try:
+    numero = int(input('Digite um numero entre (0 e 999): '))
+    if numero < 0:
+        print("'O número precisa ser positivo'")
+
+    if numero > 999:
+        print("'O número precisa ser menor que 1000'")
+
+
     cent_str = dez_str = und_str = ''
     centenas, dezenas = divmod(numero,100)
     dezenas,unidades = divmod(dezenas,10)
@@ -49,8 +56,8 @@ for numero in exemplo:
         #print(cent_str+ dez_str + und_str)  
         #print(contNumero)
         
-    if contNumero == 0:
-        print('Zero. Não consta nada a declarar!!!')
+    #if contNumero == 0:
+     #   print('Zero. Não consta nada a declarar!!!')
         
         # Casos em que haja zero no valor declarado
         
@@ -76,7 +83,11 @@ for numero in exemplo:
         if und_str == '':
             resultado = cent_str + ' e ' + dez_str
                     
-    print(resultado)  
+    if numero >=0 and numero <= 999:
+        print(f"'{numero} = {resultado}'")
+        
+except ValueError:
+    pass
             
         
           
