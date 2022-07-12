@@ -15,13 +15,6 @@ ou em galões de 3,6 litros, que custam R$ 25,00.
     Acrescente 10% de folga e sempre arredonde os valores para cima, isto é,
     considere latas cheias.
 
-
-area_pintar = 100
-rendimento = 6 por litro
-cobertura_lata18 =  18 * rendimento
-cobertura_lata3_6 =  3.6 * rendimento
-quant18 =  area_pintar/cobertura_lata18
-quant3_6 =  area_pintar/cobertura_lata3_6
 '''
 
 #Parametros
@@ -64,24 +57,16 @@ if diferença > 0 and diferença <=  3.6:
 else:
     galao_completa_latas  =  math.ceil(galao_completa_latas/3.6)
 valor_mescla_lata_galao = (lata18_valor) + (galao_completa_latas * 25)
-print(lata18_valor)
-print(galao_completa_latas)
+
 sobra = ((lata_18 * 18) + (galao_completa_latas * 3.6)) - litros
 retorno_lata_galao = f'Para menor custo, você pode comprar {lata_18} lata(s) de 18 litros e {galao_completa_latas} galão(ões) '\
                      f'de 3.6 litros a um custo de R$ {valor_mescla_lata_galao}. Vão sobrar {sobra:.1f} litro(s) de tinta.'
 
-#f'Comprando latas e galões: R$ {valor_mescla_lata_galao:,.2f} por {lata_18} lata(s) e  {galao_completa_latas} galões.'
 
 print(f'Você deve comprar {litros:.2f} litros de tinta.')
-
-#    Você pode comprar 6 lata(s) de 3.6 litros a um custo de R$ 150. Vão sobrar 2.6 litro(s) de tinta.
- #   Para menor custo, você pode comprar 1 lata(s) de 18 litros e 1 galão(ões) de 3.6 litros a um custo de R$ 105. Vão sobrar 2.6 litro(s) de tinta.
 
 
 print(retorno_latas)
 print(retorno_galao)
 print(retorno_lata_galao)
 
-#print(f'diferença: {diferença}')
-#galoes = galao_completa_latas
-#print(f'completa galoes: {galoes}')
