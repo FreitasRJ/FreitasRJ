@@ -6,7 +6,6 @@ usando este link (em minutos).
 Arredonde o tempo em minutos
 
 '''
-import math
 
 tam_MB = int(input('Informe o tamanho do arquivo MB: '))
 velo_Mbps = int(input('Informe a velocidade em Mbps: '))
