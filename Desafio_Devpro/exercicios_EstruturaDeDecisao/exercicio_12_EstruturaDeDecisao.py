@@ -102,13 +102,16 @@ salario_bruto_alinhado = alinha_saida_valores_no_print(salario_bruto, 8)
 valor_hora_alinhado = alinha_saida_valores_no_print(valor_hora, 4)
 #ir_por = alinha_a_direita(ir_por, 2)
 
-print(f'Salário Bruto: (R${valor_hora_alinhado} * {quant_hora})   :R$ {salario_bruto_alinhado}')
+
+
+print(f'Salário Bruto: (R$ {valor_hora_alinhado} * {quant_hora})     : R$ {salario_bruto_alinhado}')
 if ir_por == '0' or ir_por == '5':
-    print(f'(-) IR ({ir_por}%)                        :R$ {ir_alinhado}')
+    print(f'(-) IR ({ir_por}%)                           : R$ {ir_alinhado}')
 else:
-    print(f'(-) IR ({ir_por}%)                       :R$ {ir_alinhado}')
-print(f'(-) INSS ( 10%)                    :R$ {inss_alinhado}')
-print(f'FGTS (11%)                         :R$ {fgts_alinhado}')
-print(f'Total de descontos                 :R$ {total_descontos_alinhado}')
-print(f'Salário Líquido                    :R$ {salario_liquido_alinhado}')
+    print(f'(-) IR ({ir_por}%)                          : R$ {ir_alinhado}')
+print(f'(-) INSS ( 10%)                       : R$ {inss_alinhado}')
+print(f'(-) Sindicato (3%)                    : R$ {sindicato_alinhado}')
+print(f'FGTS (11%)                            : R$ {fgts_alinhado}')
+print(f'Total de descontos                    : R$ {total_descontos_alinhado}')
+print(f'Salário Líquido                       : R$ {salario_liquido_alinhado}')
 
