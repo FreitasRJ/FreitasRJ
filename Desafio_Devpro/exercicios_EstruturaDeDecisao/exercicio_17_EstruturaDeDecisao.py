@@ -20,21 +20,20 @@ Para ser bissexto, o ano deve ser:
 
 import calendar
 
-while True:
-    try:
-        ano = 0
-        while ano >= 0:
-            ano = int(input("Digite o ano que deseja consultar se é bissexto: "))
-                
 
-            quatro = ano % 4
-            cem = ano % 100
-            quatrocentos = ano % 400
+try:
+    
+ 
+    ano = int(input("Digite o ano que deseja consultar se é bissexto: "))        
+
+    quatro = ano % 4
+    cem = ano % 100
+    quatrocentos = ano % 400
             
-            mensagem = calendar.isleap(ano)
+    mensagem = calendar.isleap(ano)
             
             
-            print(mensagem)
-            
-    except ValueError:
-        print('Entrada inválida!!!')
+    print(mensagem)
+           
+except ValueError:
+    print('Entrada inválida!!!')
