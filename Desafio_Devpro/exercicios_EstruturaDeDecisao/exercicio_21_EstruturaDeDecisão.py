@@ -57,7 +57,7 @@ while True:
             controle += '1'
         else:
             controle += '0'
-               
+        # print(controle)       
 # a variável controle representa se existem determinadas notas. Ex.: '10111' onde controle[0] indica existência
 # de notas 100 se igual a 1 e inexistencia se igual a zero. Controle[1] o mesmo para as notas de 50 e assim  
 # por diante: Quando saque igual a 166 gera controle igual a '11111", 165 gera '11110', 1 gera '00001'.
@@ -90,6 +90,11 @@ while True:
 
         if int(controle[1]) +  int(controle[3]) == 2:
             retorno[8] = ', '
+#-----------------acrescimo atender situações onde controle = 10011 
+
+        if int(controle[0]) +  int(controle[3]) == 2:
+           retorno[8] = ', '
+
 
 #-----------------posiciona o ' e '.
                
