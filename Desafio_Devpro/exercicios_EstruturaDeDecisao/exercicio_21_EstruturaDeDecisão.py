@@ -119,7 +119,7 @@ while True:
                 saida += retorno[a]
             a += 1
         print()    
-        print(saida)    
+        print(f"'{saida}'")    
         for _ in range(4):
             print()
      
