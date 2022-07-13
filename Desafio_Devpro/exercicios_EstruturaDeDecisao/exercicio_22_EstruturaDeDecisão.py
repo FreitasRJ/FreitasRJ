@@ -1,11 +1,16 @@
+while True:
+    try:
 
-num = 399
+        num = int(input('Digite o número a consultar se é par: '))
 
-result = num % 2
+        result = num % 2
 
-if result == 0:
-    resposta = "Par"
-else:
-    resposta = "Impar"
+        if result == 0:
+            resposta = "'Par'"
+        else:
+            resposta = "'Impar'"
 
-print(resposta)
+        print(resposta)
+        
+    except ValueError:
+        print("Entrada inválida!!!")
