@@ -33,15 +33,15 @@ for a in range(5):
 
 
 if respostas_positivas == 5:
-    classificacao = 'Assassino'
+    classificacao = "'Assassino'"
 
 elif respostas_positivas == 3 or respostas_positivas == 4:
-    classificacao = 'Cúmplice'
+    classificacao = "'Cúmplice'"
 
 elif respostas_positivas == 2:
-    classificacao = 'Suspeito'
+    classificacao = "'Suspeito'"
 
 elif respostas_positivas < 2:
-    classificacao = 'Inocente'
+    classificacao = "'Inocente'"
 
 print (classificacao)
