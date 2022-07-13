@@ -23,10 +23,11 @@ combustivel = ''
 while True:
     try:
 
-        while 'G' != combustivel != 'A': 
-            combustivel = input('Qual o combustível? (A) - álcool ou (G) - gasolina? ').upper()
         while quantidade <= 0:
             quantidade = float(input('Quantos litros? '))
+
+        while 'G' != combustivel != 'A': 
+            combustivel = input('Qual o combustível? (A) - álcool ou (G) - gasolina? ').upper()
 
         if combustivel == 'A':
             tipo_combustivel = 'álcool'
@@ -50,8 +51,9 @@ while True:
             valor_pagar = quantidade * preco_g
             valor_pagar_desconto = quantidade * preco_g_com_desconto
 
-        print(f'{quantidade} litro(s) de {tipo_combustivel}', end = '')
-        print(f' custa(m): R$ {valor_pagar:.2f}. Com {desconto}% de desconto, fica R$ {valor_pagar_desconto:.2f}')
+                
+        print(f"'{quantidade:.0f} litro(s) de {tipo_combustivel} custa(m): ", end = '') 
+        print(f"R$ {valor_pagar:.2f}. Com {desconto}% de desconto, fica R$ {valor_pagar_desconto:.2f}'")
         break
     except ValueError:
-        #print('Entrada invalida!!!') 
+        print('Entrada invalida!!!') 
