@@ -82,8 +82,15 @@ while True:
             retorno[11] = ', '
         else:
             retorno[11] = ''
-        
-                
+
+#-----------------acrescimo atender situações onde controle = 10111 e 11011        
+       
+        if int(controle[0]) +  int(controle[2]) == 2:
+            retorno[5] = ', '
+
+        if int(controle[1]) +  int(controle[3]) == 2:
+            retorno[8] = ', '
+
 #-----------------posiciona o ' e '.
                
         
