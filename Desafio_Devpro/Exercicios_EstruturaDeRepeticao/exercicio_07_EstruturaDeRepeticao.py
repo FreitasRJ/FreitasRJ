@@ -11,3 +11,5 @@ try:
             maior = numero
 
     print(f'O maior número da lista é: {maior}')
+except ValueError:
+    print('Entrada inválida!!!')

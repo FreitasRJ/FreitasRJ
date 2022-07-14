@@ -13,15 +13,14 @@ while True:
     if letra in vogais:
     
         #print(f'A letra {letra} é uma vogal')
-        print('vogal')
+        print("'vogal'")
         
     elif letra in consoantes:
         
          #print(f'A letra {letra} é uma consoante')
-        print('consoante')
-    #else:
+        print("'consoante'")
     
-       #break
+    break
     
    
     

@@ -17,11 +17,11 @@ while True:
         media = (nota_1 + nota_2 + nota_3)/3
         
         if media == 10:
-            situacao = 'Aprovado com Distinção'
+            situacao = "'Aprovado com Distinção'"
         elif media >= 7:
-            situacao = 'Aprovado'
+            situacao = "'Aprovado'"
         elif media < 7:
-            situacao = 'Reprovado'
+            situacao = "'Reprovado'"
         
         #retirado para atender o doctest do curso.
         #print(f'{situacao} com média alcançada {media:.2f}.')

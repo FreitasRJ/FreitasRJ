@@ -9,12 +9,12 @@ while True:
     sexo = input('Digite: (F) - Feminino ou  (M) - Masculino:  ').lower()
 
     if sexo == 'f':
-        print('F - Feminino')
+        print("'F - Feminino'")
     
     elif sexo == 'm':
-        print('M - Masculino')
+        print("'M - Masculino'")
     
     elif 'f' != sexo != 'm':
 
-        print('Sexo Inválido')
+        print("'Sexo Inválido'")
         

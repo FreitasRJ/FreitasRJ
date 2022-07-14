@@ -13,11 +13,11 @@ while True:
         break
     
     if numero > 0:
-            num = 'Positivo'
+            num = "'positivo'"
     elif numero < 0:
-            num = 'Negativo'
+            num = "'negativo'"
     else:
-            num = 'não tem positivo nem negativo'
+            num = "'não tem positivo nem negativo'"
             
     print(num)
     

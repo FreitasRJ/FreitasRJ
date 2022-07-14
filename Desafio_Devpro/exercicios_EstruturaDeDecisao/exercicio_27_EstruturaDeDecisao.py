@@ -64,7 +64,7 @@ def alinha_a_direita(dado: str, num_caracteres: int):
     alinhado = num_espacos_str + dado  
     return alinhado
 
-
+#-----------------------------------------------------
 
 peso_morango = int(input('Qual o peso dos morangos?: '))
 peso_maca = int(input('Qual o peso das maças?: '))

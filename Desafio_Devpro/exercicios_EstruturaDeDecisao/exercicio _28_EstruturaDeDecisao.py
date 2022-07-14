@@ -91,12 +91,12 @@ while True:
         valor_compra = quantidade * preco_carne
 
         if forma_pagamento == "dinheiro" or forma_pagamento == 'pix':
-            print(f'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Não há desconto, pagamento feito com {forma_pagamento}')
+            print(f"'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Não há desconto, pagamento feito com {forma_pagamento}'")
         
         else: 
             
             valor_com_desconto = valor_compra - (valor_compra * desconto_percentual)
-            print(f'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_com_desconto:.2f}')    
+            print(f"'{quantidade} kg de {tipo_carne} a R$ {preco_carne:.2f}/kg saem a R$ {valor_compra:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_com_desconto:.2f}'")    
 
         break
 

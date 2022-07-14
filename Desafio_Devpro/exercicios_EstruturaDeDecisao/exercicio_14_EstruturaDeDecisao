@@ -17,8 +17,8 @@ Mostar valores com uma casa decimal.
 
 
 """
-nota_01 = int(input('Digite a primeira nota: '))
-nota_02 = int(input('Digite a segunda nota: '))
+nota_01 = float(input('Digite a primeira nota: '))
+nota_02 = float(input('Digite a segunda nota: '))
 media = (nota_01 + nota_02)/2
 conceito = 'E'
 condicao = "REPROVADO"
