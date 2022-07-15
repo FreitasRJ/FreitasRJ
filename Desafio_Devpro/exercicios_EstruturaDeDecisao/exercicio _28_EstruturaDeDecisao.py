@@ -56,10 +56,10 @@ while True:
         while modo_pag != 'd' and modo_pag != 'c' and modo_pag != 'p':
             modo_pag = input().lower()
         
-        if modo_pag == 'd':
-            forma_pagamento = "dinheiro"
-        if modo_pag == 'p':
-            forma_pagamento = "pix"
+            if modo_pag == 'd':
+                forma_pagamento = "dinheiro"
+            if modo_pag == 'p':
+                forma_pagamento = "pix"
 
         
 
