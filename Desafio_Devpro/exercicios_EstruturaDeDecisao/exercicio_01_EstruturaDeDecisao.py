@@ -9,5 +9,3 @@ if numero01 > numero02:
     print(numero01)
 else:
     print(numero02)
-    
-    
