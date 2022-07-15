@@ -20,40 +20,56 @@ while True:
                         
         retorno = [nota_100, nota_100_str, '', nota_50, nota_50_str, '', nota_10, nota_10_str, '',
                    nota_5, nota_5_str, '', nota_1, nota_1_str]
-        retorno[0] = retorno[3] = retorno[6] = retorno[9] = retorno[12] = ''
+        retorno[0] = retorno[3] = retorno[6] = retorno[9] = retorno[12]  = ''
             
     # -----------------------------------------------------
         nota_100, saque = divmod(saque, 100)
         if nota_100 != 0:
-            retorno[1] = f'{nota_100} notas de R$ 100'
+            plural = ''
+            if nota_100 > 1:
+                plural = 's'
+            
+            retorno[1] = f'{nota_100} nota{plural} de R$ 100'
             controle += '1'
         else:
             controle += '0'
         
         nota_50, saque = divmod(saque, 50)
         if nota_50 != 0:
-            retorno[4] = f'{nota_50} notas de R$ 50'
+            plural = ''
+            if nota_50 > 1:
+                plural = 's'
+            retorno[4] = f'{nota_50} nota{plural} de R$ 50'
             controle += '1'
         else:
             controle += '0'
             
         nota_10, saque = divmod(saque, 10)
         if nota_10 != 0:
-            retorno[7] = f'{nota_10} notas de R$ 10'
+            plural = ''
+            if nota_10 > 1:
+                plural = 's'
+            retorno[7] = f'{nota_10} nota{plural} de R$ 10'
             controle += '1'
         else:
             controle += '0'
             
         nota_5, saque = divmod(saque, 5)
         if nota_5 != 0:
-            retorno[10] = f'{nota_5} notas de R$ 5'
+            plural = ''
+            if nota_5 > 1:
+                plural = 's'
+            retorno[10] = f'{nota_5} nota{plural} de R$ 5'
             controle += '1'
         else:
             controle += '0'
             
         nota_1 = saque 
         if nota_1 != 0:
-            retorno[13] = f'{nota_1} notas de R$ 1'
+            plural = ''
+            if nota_1 > 1:
+                plural = 's'
+            retorno[13] = f'{nota_1} nota{plural} de R$ 1'
             controle += '1'
         else:
             controle += '0'
