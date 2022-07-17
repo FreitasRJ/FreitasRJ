@@ -25,14 +25,8 @@ def sort(fila):
     print(maior, menor)
     print(f'Soma: {soma}')
     
-conjunto = []   
-conjunto_original = [4,1,6,1001,11,55,-2,1000]
-for novo in range(0,len(conjunto_original)):
-    novo = conjunto_original[novo]
-    if novo >= 0 and novo <= 1000:
-        conjunto.append(novo)
-    print(conjunto)
-
+    
+conjunto = [9,8,7,6,5,4,3,2,10, -2]
 print (sort(conjunto))
 
     
