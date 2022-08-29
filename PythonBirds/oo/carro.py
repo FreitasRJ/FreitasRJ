@@ -102,7 +102,7 @@ O   L
 
 '''
 
-chave = 0
+
 
 class Motor:
     def __init__(self):
@@ -111,25 +111,26 @@ class Motor:
 
     def acelerar(self):
         self.velocidade += 1
-
+    
     def frear(self):
         self.velocidade -= 2
         if self.velocidade < 0:
             self.velocidade = 0
     
 class Direcao:
-   
+    
     def __init__(self):
-        rumo = {1:'Norte', 2:'Leste', 3:'Sul', 4:'Oeste'}
-        self.valor = rumo[1]
+        self.valor = 'Norte'
+        self.chave = 1
         
     def girar_a_direita(self):
-        chave +=1
-        if chave > 4:
-            chave = 1
-        self.valor = rumo[chave]
+        rumo = {1:'Norte', 2:'Leste', 3:'Sul', 4:'Oeste'}
+        self.chave +=1
+        if self.chave > 4:
+            self.chave = 1
+        self.valor = rumo[self.chave]
 
-print(chave)
+
 a = Direcao()
 a.girar_a_direita()
-
+print(a.valor)
