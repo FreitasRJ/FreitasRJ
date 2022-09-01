@@ -51,6 +51,7 @@ class Pessoa:
 
   
 ronaldo = Pessoa('Ronaldo', 32, '1234567891-0')
+ronaldo.correr()
 #ronaldo.print_cpf()
 ronaldo.beber('cerveja')
 ronaldo.beber('água')
