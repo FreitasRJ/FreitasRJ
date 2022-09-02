@@ -55,6 +55,8 @@ ronaldo.correr()
 #ronaldo.print_cpf()
 ronaldo.beber('cerveja')
 ronaldo.beber('água')
+ronaldo.beber('cerveja')
+
 
 
 
